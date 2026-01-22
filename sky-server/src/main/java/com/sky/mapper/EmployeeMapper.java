@@ -25,7 +25,7 @@ public interface EmployeeMapper {
    @Insert("insert into employee (name, username, password, phone, sex, id_number, status, create_time, update_time, create_user, update_user) " +
            "values " +
            "(#{name}, #{username}, #{password}, #{phone}, #{sex}, #{idNumber}, #{status}, #{createTime}, #{updateTime}, #{createUser}, #{updateUser})")
-    void insert(Employee employee);
+   void insert(Employee employee);
 
    /**
      * 员工分页查询
@@ -33,4 +33,10 @@ public interface EmployeeMapper {
      * @return
      */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+     * 根据id修改员工信息
+     * @param employee
+     */
+    void update(Employee employee);
 }
