@@ -85,7 +85,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.insert(employee);
     }
 
-
+    /**
+     * 员工分页查询
+     * @param employeePageQueryDTO
+     * @return
+     */
     @Override
     public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
 
@@ -102,7 +106,7 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @param id
      */
     @Override
-    public void StartOrStop(Integer status, Long id) {
+    public void startOrStop(Integer status, Long id) {
         Employee employee= new Employee();
         employee.setId(id);
         employee.setStatus(status);
